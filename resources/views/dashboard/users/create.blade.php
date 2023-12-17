@@ -5,7 +5,7 @@
         <!-- .page-title-bar -->
         <header class="page-title-bar ">
             <!-- page title stuff goes here -->
-            <h1 class="page-title"> Create Schedule </h1>
+            <h1 class="page-title"> Create User </h1>
 
         </header><!-- /.page-title-bar -->
         <!-- .page-section -->

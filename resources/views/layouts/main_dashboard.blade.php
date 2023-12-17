@@ -8,7 +8,9 @@
     <!-- .app-header -->
     <x-dashboard.nav_header />
     <!-- .app-aside -->
-    <x-dashboard.aside />
+    @if (!(Auth::user()->role == 'patient'))
+        <x-dashboard.aside />
+    @endif
     <!-- .app-main -->
     <main class="app-main">
         <!-- .wrapper -->
