@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $attributes = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:3',
@@ -34,21 +34,11 @@ class UserController extends Controller
             'role' => 'in:admin,patient,doctor',
         ]);
 
-        $user = new User;
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password'));
-        $user->role = $request->input('role', 'patient');
-        $user->address = $request->input('address');
-        $user->phoneNumber = $request->input('phoneNumber');
-
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('user_images', 'public');
-            $user->image = $imagePath;
+            $attributes['image'] = $imagePath;
         }
-
-        $user->save();
-
+        $user = User::create($attributes);
         return redirect()->route('user.index')->with('success', 'User created successfully');
     }
 

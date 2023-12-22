@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\Clientside\ClientsideController;
+use App\Http\Controllers\Clientside\LanguageController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -17,37 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
-
-Route::get('/admin', function () {
-    return view('dashboard.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-// Route::middleware(['auth', 'role:admin'])->group(function () {
-// });
-
-Route::middleware(['auth', 'checkRole:admin'])->group(function () {
-    Route::resource('user', UserController::class);
-    Route::get('/search', [UserController::class, 'search'])->name('user.search');
-});
-
-
-Route::middleware(['auth', 'checkRole:admin,doctor'])->group(function () {
-
-    Route::resource('appointment', AppointmentController::class)->middleware('auth');
-    Route::get('/reserve-appointment/{appointment}', [AppointmentController::class, 'reserveAppointment'])->name('appointments.reserve');
-    Route::put('/appointments/{id}/update-status', [AppointmentController::class, 'updateStatus'])->name('appointment.updateStatus');
-});
-
-Route::resource('message', MessageController::class);
-
-
-Route::get('/profile/{user}', [ProfileController::class, 'index'])->middleware('auth')->name('profile.index');
-
-
+// Clientside Routes
+Route::get('/',[ClientsideController::class,'index'])->name('home');;
+Route::get('/doctors',[ClientsideController::class,'doctors'])->name('doctors');
+Route::get('/doctors/booking/{name?}',[ClientsideController::class,'booking'])->name('booking');
+Route::get('/contact',[ClientsideController::class,'contact'])->name('contact-us');
+Route::get('/about',[ClientsideController::class,'about'])->name('about-us');
+Route::get('/language/{lang}',[LanguageController::class,'index'])->name('language');;
 
 
 

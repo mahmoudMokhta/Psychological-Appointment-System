@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap');
+/*Set Fonts */
+/*Arabic Lang Style*/
+*:lang(ar):not(i):not(div.fab):not(div.fas) {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+.container:lang(ar) {
+    direction: rtl;
+}
+.header-action-02:lang(ar) {
+    margin-left: 10px;
+    margin-right: auto;
+}
+.header-top-bar-wrap__language:lang(ar) {
+        padding-left: unset ;
+
+}
+.header-action-02:lang(ar)::before {
+    right: -25px;
+    left: unset;
+}
+.header-top-bar-wrap__language:lang(ar)::before {
+     left: -15px;
+    right: unset;
+ }
+.menu-primary__container:lang(ar) > li > a.active span::before {
+    right: 0;
+    left: auto;
+}
+.header-top-bar-wrap__info-list li a i, .header-top-bar-wrap__info-list li button i:lang(ar) {
+    margin-left: 3px;
+    margin-right: 0;
+}
+ul.header-top-bar-wrap__info-list.header-top-bar-wrap__info-list-02:lang(ar) {
+    flex-direction: row-reverse;
+}
+.menu-primary__container:lang(ar)  > li.mega-menu-children > a span::after{
+    margin-right: 8px;
+}
+.header-serach__btn:lang(ar) {
+    left: 10px;
+    right: unset;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-top: 8px;
+
+}
+.header-serach__input:lang(ar) {
+    padding-left: 65px;
+    padding-right: 19px;
+}
+.header-top-bar-wrap__info:lang(ar) > * {
+    margin-left: 30px !important;
+    margin-right: 0 !important;
+}
+ul.header-top-bar-wrap__info-list.header-top-bar-wrap__info-list-03.d-none.d-lg-flex:lang(ar) {
+    flex-direction: row-reverse;
+}
+.header-top-bar-wrap__language:lang(ar) .language-dropdown::before
+{
+    right: 21px;
+    left: unset;
+
+}
+.header-top-bar-wrap__language .language-dropdown li a:lang(ar) {
+    text-align: right;
+}
+.modal:lang(ar) > * {
+    direction: rtl;
+}
+.modal-description:lang(ar) button {
+    margin-right: 5px;
+}
+.slider-register__box:lang(ar){
+    margin-right: auto;
+    margin-left: unset;
+}
+@media only screen and (min-width: 1500px), only screen and (min-width: 1200px) and (max-width: 1499px), only screen and (min-width: 992px) and (max-width: 1199px) {
+    .slider-caption-04__btn:lang(ar) {
+
+        line-height: 63px;
+        font-weight:bold;
+    }
+}
+.slider-caption-04__sub-title:lang(ar) {
+    letter-spacing: 1px;
+}
+.header-logo:lang(ar) {
+    margin-left: 28px;
+    margin-right: 0;
+}
+.cta-courses:lang(ar)
+{
+    display: flex;
+    justify-content: flex-end;
+}
+.cta-courses:lang(ar) i {
+    padding-right: 5px;
+    position: relative;
+    top: 2px;
+}
+.course-info-02__meta:lang(ar) span :first-child {
+    margin-left: 8px;
+    margin-right: 0;
+}
+.testimonial-info__caption:lang(ar) {
+
+    padding-right: 15px;
+}
+
+.testimonial-quote-icon:lang(ar) {
+    left: 20px;
+    right: unset;
+}
+.footer-widget__copyright:lang(ar)
+{
+    direction: ltr;
+}
+.instructor-item__meta:lang('ar') i {
+    margin-left: 4px;
+}
+
+.instructor-item__image img {
+    object-fit: cover;
+}
+.breadcrumb-item:first-child {
+    position: relative;
+}
+.breadcrumb-item:first-child:after {
+    content:'/' !important;
+    position: relative;
+    left: 10px;
+
+}
+.breadcrumb-item:lang(ar):first-child:after {
+    right: 10px;
+
+}
+.breadcrumb-item:before {
+    content:'' !important;
+}
+.page-breadcrumb .breadcrumb .breadcrumb-item {
+    margin: 0 10px;
+}
+.page-breadcrumb .breadcrumb .breadcrumb-item.active {
+    color: #0079c5 !important;
+    font-weight: bold;
+}
+.event-details__meta:lang(ar) .meta-action i {
+    margin-left: 6px;
+    margin-right: unset;
+    margin-bottom: 5px;
+
+}
+.event-details__meta:lang(ar) > * {
+    margin-left: 24px;
+    margin-right: 0;
+}
+
+.speaker-item__thumbnail img {
+    object-fit: cover;
+    width: 150px !important;
+    height: 150px !important;
+}
+.contact-info__icon:lang(ar) {
+
+    margin-left: 6px;
+    bottom: 5px;
+    position: relative;
+}

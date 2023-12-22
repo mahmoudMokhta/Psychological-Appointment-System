@@ -188,7 +188,7 @@
                         </tbody><!-- /tbody -->
                     </table><!-- /.table -->
                     @else
-                    <h2>No appointments available.</h2>
+                    <h4 class="text-muted">No appointments available.</h4>
                     @endif
 
 
