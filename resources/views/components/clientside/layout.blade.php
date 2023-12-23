@@ -50,7 +50,7 @@
 
         {{$slot}}
 
-        <x-clientside.footer />
+
 
         <!--Back To Start-->
         <button id="backBtn" class="back-to-top backBtn">

@@ -32,4 +32,9 @@ class ClientsideController extends Controller
         return view('clientside.pages.about');
 
     }
+    public function schedules()
+    {
+        return view('clientside.pages.schedules');
+
+    }
 }

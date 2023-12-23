@@ -176,7 +176,25 @@
     "subscriptions": "الاشتراكات",
     "certificates": "الشهادات",
     "what_make_us_special": "ما الذي يجعلنا مميزين",
-    "who_we_are": "من نحن"
+    "who_we_are": "من نحن",
+    "all_specialties": "جميع التخصصات",
+    "all": "الكل",
+    "find_your_specialty": "ابحث عن تخصصك",
+    "find_your_doctor": "ابحث عن طبيبك",
+    "keywords": "الكلمات الدلالية",
+    "popular_keywords": "الكلمات الدلالية الشائعة",
+    "search": "بحث",
+    "search_for": "البحث عن",
+    "popular_doctors": "الأطباء الشائعين",
+    "book_now": "احجز الآن",
+    "closest_appointment": "أقرب موعد",
+    "we_found_num_doctors_available_for_you": "لقد وجدنا :num طبيب متاح لأجلك",
+    "created_successfully": "تم الانشاء بنجاح",
+    "success_login": "تم تسجيل الدخول بنجاح",
+    "update_profile": "تحديث الملف الشخصي",
+    "you_can_access_your_profile": "يمكنك الوصول إلى ملفك الشخصي",
+    "you_can_access": "يمكنك الوصول إلى"
+
 
 
 

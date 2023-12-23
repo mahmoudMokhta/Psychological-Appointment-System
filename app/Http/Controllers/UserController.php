@@ -30,7 +30,7 @@ class UserController extends Controller
             'password' => 'required|min:3',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'address' => 'required',
-            'phoneNumber' => 'required|integer',
+            'phone' => 'required|integer',
             'role' => 'in:admin,patient,doctor',
         ]);
 
@@ -39,7 +39,7 @@ class UserController extends Controller
             $attributes['image'] = $imagePath;
         }
         $user = User::create($attributes);
-        return redirect()->route('user.index')->with('success', 'User created successfully');
+        return redirect()->route('home',['register'=>'Done'])->with('success', __('created_successfully'));
     }
 
     public function show(User $user)
@@ -59,7 +59,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email,' . $user->id,
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'address' => 'required',
-            'phoneNumber' => 'required|integer',
+            'phone' => 'required|integer',
             'role' => 'in:admin,patient,doctor',
         ]);
 
@@ -67,7 +67,7 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->role = $request->input('role', 'patient');
         $user->address = $request->input('address');
-        $user->phoneNumber = $request->input('phoneNumber');
+        $user->phone = $request->input('phone');
 
         if ($request->hasFile('image')) {
 
@@ -99,7 +99,7 @@ class UserController extends Controller
         $search = $request['search'];
         $users = User::where('name', 'like', '%' . $search . '%')
             ->orWhere('email', 'like', '%' . $search . '%')
-            ->orWhere('phoneNumber', 'like', '%' . $search . '%')
+            ->orWhere('phone', 'like', '%' . $search . '%')
             ->orWhere('address', 'like', '%' . $search . '%')
             ->orWhere('role', 'like', '%' . $search . '%')
             ->orderBy('created_at', 'desc')

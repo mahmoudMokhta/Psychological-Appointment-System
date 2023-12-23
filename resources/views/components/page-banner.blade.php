@@ -25,9 +25,10 @@
         "page-banner__caption",
          "text-center"
 
-])
+            ])
 
             >
+
                 <h2 class="page-banner__main-title">{{__($banner_title)}}</h2>
             </div>
             <!-- Page Banner Caption End -->

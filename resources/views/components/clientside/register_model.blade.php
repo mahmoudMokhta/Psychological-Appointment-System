@@ -15,7 +15,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('patient.register') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row gy-5">
                             <div class="col-md-6">

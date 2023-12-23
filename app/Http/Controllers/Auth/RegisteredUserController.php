@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'address' => ['required', 'string', 'max:255'],
             'role' => 'in:admin,patient,doctor',
-            'phoneNumber' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
         ]);
 
 
@@ -49,7 +49,7 @@ class RegisteredUserController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'address' => $request->address,
-                'phoneNumber' => $request->phoneNumber,
+                'phone' => $request->phone,
                 'image' => $imagePath,
             ]);
         } else {
@@ -59,7 +59,7 @@ class RegisteredUserController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'address' => $request->address,
-                'phoneNumber' => $request->phoneNumber,
+                'phone' => $request->phone,
             ]);
         }
 

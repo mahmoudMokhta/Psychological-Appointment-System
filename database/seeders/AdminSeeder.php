@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
         $user->password = Hash::make('123456');
         $user->role = 'admin';
         $user->address = 'anywhere';
-        $user->phoneNumber = '123456789';
+        $user->phone = '123456789';
         $user->save();
 
     }

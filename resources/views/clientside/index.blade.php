@@ -2,11 +2,11 @@
 
     <!-- Slider Section Start -->
     <div class="slider-section slider-section-04">
-        <div class="slider-wrapper" style="background-image: url(frontend/assets/images/home-education-center-hero-bg.jpg);">
+        <div class="slider-wrapper" style="background-image: url({{asset('frontend/assets/images/home-education-center-hero-bg.jpg')}});">
             <div class="container">
 
                 <div class="row gy-10 align-items-center">
-                    <div class="col-lg-6">
+                    <div class="@auth col-lg-12 text-center @endauth @guest col-lg-6  @endguest ">
                         <!-- Slider Caption Start -->
                         <div class="slider-caption-04" data-aos="fade-up" data-aos-duration="1000">
                             <h4 class="slider-caption-04__sub-title">@lang('slider_top_phrase')</h4>
@@ -18,6 +18,7 @@
                         </div>
                         <!-- Slider Caption End -->
                     </div>
+                    @guest
                     <div class="col-lg-6">
 
                         <!-- Slider Register Form Start -->
@@ -27,22 +28,33 @@
                                 @lang('to_access_more_num_of_doctors',['num' => "<span>1200+</span>"])
                             </h4>
 
-                            <form action="#">
+                            <form action="{{route('patient.register')}}" method="post">
+                                @method('POST')
+                                @csrf
                                 <div class="slider-register__form">
 
                                     <div class="slider-register__input">
                                         <i class="fas fa-user"></i>
-                                        <input type="text" class="form-control" placeholder="@lang('your_name')">
+                                        <input type="text" class="form-control" name="name" placeholder="@lang('your_name')">
+                                        @error('name')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
 
                                     <div class="slider-register__input">
                                         <i class="fas fa-envelope"></i>
-                                        <input type="email" class="form-control" placeholder="@lang('your_email')">
+                                        <input type="email" class="form-control" name="email" placeholder="@lang('your_email')">
+                                        @error('email')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
 
                                     <div class="slider-register__input">
                                         <i class="fas fa-key"></i>
-                                        <input type="password" class="form-control" placeholder="@lang('password')">
+                                        <input type="password" class="form-control" name="password" placeholder="@lang('password')">
+                                        @error('password')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
 
                                     <div class="slider-register__btn">
@@ -55,6 +67,7 @@
                         <!-- Slider Register Form End -->
 
                     </div>
+                    @endguest
                 </div>
 
             </div>
@@ -1443,7 +1456,7 @@
     <!-- Newsletter Start -->
     <x-newsletter />
     <!-- Newsletter End -->
-
+    <x-clientside.successRegisterModel />
     <!-- Footer Start -->
 
     <!-- Footer End -->

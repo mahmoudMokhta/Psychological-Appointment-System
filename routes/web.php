@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\Clientside\ClientsideController;
 use App\Http\Controllers\Clientside\LanguageController;
+use App\Http\Controllers\Clientside\Patient\Auth\RegisterController as PatientRegisterController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -24,8 +25,12 @@ Route::get('/',[ClientsideController::class,'index'])->name('home');;
 Route::get('/doctors',[ClientsideController::class,'doctors'])->name('doctors');
 Route::get('/doctors/booking/{name?}',[ClientsideController::class,'booking'])->name('booking');
 Route::get('/contact',[ClientsideController::class,'contact'])->name('contact-us');
+Route::get('/schedules',[ClientsideController::class,'schedules'])->name('schedules');
 Route::get('/about',[ClientsideController::class,'about'])->name('about-us');
-Route::get('/language/{lang}',[LanguageController::class,'index'])->name('language');;
+Route::get('/language/{lang}',[LanguageController::class,'index'])->name('language');
+
+// Auth Routes For Patients
+Route::post('/patient/register',[PatientRegisterController::class,'register'])->name('patient.register');
 
 
 
